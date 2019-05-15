@@ -38,7 +38,8 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+void push(stack_t **, unsigned int);
 ssize_t read_file(const char *filename, size_t fsize);
 void read_lines(char *text);
+
 #endif /*MONTY_H*/
