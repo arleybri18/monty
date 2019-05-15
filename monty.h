@@ -39,8 +39,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 void (*getinstruction(char *opcode))(stack_t **, unsigned int);
-void push_handler(stack_t **stack, unsigned int line_number)
+void push_handler(stack_t **stack, unsigned int line_number);
+void env_handler(stack_t **stack, unsigned int line_number);
 ssize_t read_file(const char *filename);
-void  build_instruction(int line_number);
+void  build_instruction(stack_t **head, unsigned int line_number);
 extern char *linevalue;
 #endif /*MONTY_H*/

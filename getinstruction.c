@@ -8,7 +8,7 @@ void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 	int i_struct = 0;
 	instruction_t instructions[] = {
 		{"push", push_handler},
-		{"pall", env_handler},
+		/*{"pall", env_handler},*/
 		{NULL, NULL}
 	};
 

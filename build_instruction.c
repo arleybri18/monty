@@ -6,19 +6,22 @@
  * @text: text to read
  * Return: number of characters readed
  */
-void build_instruction(int line_number)
+void build_instruction(stack_t **head, unsigned int line_number)
 {
 	char *line = NULL;
+	instruction_t execute;
 
 	printf("%s\n", linevalue);
 	/*iterate over array to split the opcode and data*/
 	line = strtok(linevalue, " ");
 	if (line != NULL)
-		printf("command is %s line %d\n", line, line_number);
-	while (line)
 	{
-		line = strtok(NULL, " ");
-		if (line != NULL)
-			printf("command is %s line %d\n", line, line_number);
+		execute.f = getinstruction(line);
+		if (execute.f)
+			execute.f(head, line_number);
+		else{
+			printf("NO existe el comando");
+			exit(EXIT_FAILURE);
+		}
 	}
 }
