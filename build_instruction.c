@@ -13,7 +13,8 @@ void build_instruction(stack_t **head, unsigned int line_number)
 	instruction_t execute;
 
 	/*iterate over array to split the opcode and data*/
-	line = strtok(linevalue, " ");
+	line = str_concat("", linevalue);
+	line = strtok(line, " ");
 	if (line != NULL)
 	{
 		/*handle if the line is empty*/
@@ -25,9 +26,10 @@ void build_instruction(stack_t **head, unsigned int line_number)
 			else
 			{
 				fprintf(stderr, "L%d: unknown instruction\n", line_number);
+				free(line);
 				exit(EXIT_FAILURE);
 			}
-			
 		}
 	}
+	free(line);
 }

@@ -11,6 +11,7 @@
 void push_handler(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node = NULL;
+	char *line = NULL;
 
 	/*allocate memory for a new node*/
 	new_node = malloc(sizeof(stack_t));
@@ -21,7 +22,17 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	}
 
 	/*put data in node,-- validate how send this value*/
-	new_node->n = 1;
+	line = strtok(linevalue, " \n");
+	line = strtok(NULL, " \n");
+	if (line && is_number(line))
+	{
+		new_node->n = atoi(line);
+	}
+	else
+	{
+		free(new_node);
+		exit(EXIT_FAILURE);
+	}
 	new_node->next = *stack;
 	new_node->prev = NULL;
 	/*validate if a list is not empty, point tp new node*/

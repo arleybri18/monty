@@ -1,4 +1,3 @@
-
 #include "monty.h"
 
 char *linevalue = NULL;
