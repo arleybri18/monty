@@ -4,7 +4,6 @@
  * read_file - read a file sended
  *
  * @filename: file to read
- * @fsize: size of buffer to read
  * Return: number of characters readed
  */
 ssize_t read_file(const char *filename)
@@ -23,14 +22,15 @@ ssize_t read_file(const char *filename)
 	fd = fopen(filename, "r");
 	/*validate if open file fail */
 	if (fd == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file\n");
 		exit(EXIT_FAILURE);
+	}
 
 	/*read file*/
 	while (read_text = getline(&linevalue, &n, fd) != -1)
 	{
-		/*
-		 call to build the instruction
-		 */
+		/*call to build the instruction*/
 		build_instruction(&head, line_number);
 		line_number++;
 	}

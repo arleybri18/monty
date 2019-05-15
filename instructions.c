@@ -16,7 +16,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
-		perror("Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

@@ -2,6 +2,8 @@
 /**
  * getinstruction - get the instruction function
  * @opcode: name of the instruction
+ *
+ * Return: Nothing
  */
 void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 {
