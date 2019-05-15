@@ -103,3 +103,18 @@ char *str_concat(char *s1, char *s2)
 	p[i] = '\0';
 	return (p);
 }
+
+/**
+ * free_list - free a list
+ * @head: Head of the list
+ */
+void free_list(stack_t *head)
+{
+	if (head == NULL)
+		;
+	else
+	{
+		free_list(head->next);
+		free(head);
+	}
+}

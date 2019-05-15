@@ -51,4 +51,5 @@ char is_digit(char c);
 char is_number(char *str);
 char *str_concat(char *s1, char *s2);
 char _str_cmp(char *str1, char *str2);
+void free_list(stack_t *head);
 #endif /*MONTY_H*/

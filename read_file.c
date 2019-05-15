@@ -31,6 +31,7 @@ ssize_t read_file(const char *filename)
 		line_number++;
 	}
 	free(linevalue);
+	free_list(head);
 	fclose(fd);
 	return (read_text);
 }
