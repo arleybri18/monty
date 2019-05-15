@@ -108,3 +108,16 @@ void pop_handler(stack_t **stack, unsigned int line_number)
 		free(current);
 	}
 }
+
+/**
+ *nop_handler - do nothing
+ *
+ *@stack: head of the list
+ *@line_number: number of line with the instruction
+ *Return: Nothing
+ */
+
+void nop_handler(stack_t **stack, unsigned int line_number)
+{
+	;
+}
