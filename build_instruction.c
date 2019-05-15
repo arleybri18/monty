@@ -9,7 +9,7 @@
  */
 void build_instruction(stack_t **head, unsigned int line_number)
 {
-	char *aux,*line = NULL;
+	char *aux, *line = NULL;
 	instruction_t execute;
 
 	/*iterate over array to split the opcode and data*/

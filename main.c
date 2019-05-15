@@ -1,6 +1,13 @@
 #include "monty.h"
 
 char *linevalue = NULL;
+/**
+ * main - function main
+ *
+ *@argc: number of arguments
+ *@argv: arguments passed to the function
+ *Return: 0 its ok
+ */
 
 int main(int argc, char *argv[])
 {
