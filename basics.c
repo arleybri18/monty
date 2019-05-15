@@ -58,8 +58,12 @@ char is_number(char *str)
 
 	while (str[iterator])
 	{
-		if (is_digit(str[iterator]) == 0)
+		if(iterator == 0 && str[iterator] == '-')
+			;
+		else if(is_digit(str[iterator]) == 0)
+		{
 			return (0);
+		}
 		iterator++;
 	}
 	return (1);

@@ -11,7 +11,6 @@ ssize_t read_file(const char *filename)
 	FILE *fd;
 	unsigned int line_number = 1;
 	int read_text;
-	char *line = NULL;
 	size_t n = 0;
 	stack_t *head = NULL;
 
@@ -28,7 +27,7 @@ ssize_t read_file(const char *filename)
 	}
 
 	/*read file*/
-	while (read_text = getline(&linevalue, &n, fd) != -1)
+	while ((read_text = getline(&linevalue, &n, fd) != -1))
 	{
 		/*call to build the instruction*/
 		build_instruction(&head, line_number);

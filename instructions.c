@@ -12,6 +12,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node = NULL;
 	char *line = NULL;
+	(void) line_number;
 
 	/*allocate memory for a new node*/
 	new_node = malloc(sizeof(stack_t));
@@ -30,6 +31,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
+		printf("saliendo\n");
 		free(new_node);
 		exit(EXIT_FAILURE);
 	}
@@ -52,6 +54,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 void pall_handler(stack_t **stack, unsigned int line_number)
 {
 	stack_t *aux = NULL;
+	(void)line_number;
 
 	aux = *stack;
 	while (aux)
@@ -130,5 +133,8 @@ void pop_handler(stack_t **stack, unsigned int line_number)
 
 void nop_handler(stack_t **stack, unsigned int line_number)
 {
+	(void)stack;
+	(void)line_number;
+
 	;
 }
