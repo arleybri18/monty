@@ -47,4 +47,7 @@ void nop_handler(stack_t **stack, unsigned int line_number);
 ssize_t read_file(const char *filename);
 void  build_instruction(stack_t **head, unsigned int line_number);
 extern char *linevalue;
+char is_digit(char c);
+char is_number(char *str);
+char *str_concat(char *s1, char *s2);
 #endif /*MONTY_H*/
