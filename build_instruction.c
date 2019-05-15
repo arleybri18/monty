@@ -9,12 +9,12 @@
  */
 void build_instruction(stack_t **head, unsigned int line_number)
 {
-	char *line = NULL;
+	char *aux,*line = NULL;
 	instruction_t execute;
 
 	/*iterate over array to split the opcode and data*/
-	line = str_concat("", linevalue);
-	line = strtok(line, " ");
+	aux = str_concat("", linevalue);
+	line = strtok(aux, " ");
 	if (line != NULL)
 	{
 		/*handle if the line is empty*/
@@ -27,10 +27,10 @@ void build_instruction(stack_t **head, unsigned int line_number)
 			else
 			{
 				fprintf(stderr, "L%d: unknown instruction\n", line_number);
-				free(line);
+				free(aux);
 				exit(EXIT_FAILURE);
 			}
 		}
 	}
-	free(line);
+	free(aux);
 }
