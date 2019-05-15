@@ -8,7 +8,7 @@
  *Return: address of the new element top of the list
  */
 
-void push(stack_t **stack, unsigned int line_number)
+void push_handler(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node = NULL;
 
@@ -29,4 +29,3 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	*stack = new_node;
 }
-
