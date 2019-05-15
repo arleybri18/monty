@@ -13,6 +13,7 @@ void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"pall", pall_handler},
 		{"pint", pint_handler},
 		{"pop", pop_handler},
+		{"nop", nop_handler},
 		{NULL, NULL}
 	};
 

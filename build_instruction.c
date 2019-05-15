@@ -28,7 +28,6 @@ void build_instruction(stack_t **head, unsigned int line_number)
 				fprintf(stderr, "L%d: unknown instruction\n", line_number);
 				exit(EXIT_FAILURE);
 			}
-			
 		}
 	}
 }
