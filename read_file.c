@@ -14,9 +14,6 @@ ssize_t read_file(const char *filename)
 	size_t n = 0;
 	stack_t *head = NULL;
 
-	/*validate if filename is don't  send*/
-	if (filename == NULL)
-		return (0);
 	/*open file read only*/
 	fd = fopen(filename, "r");
 	/*validate if open file fail */

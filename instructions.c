@@ -31,7 +31,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		printf("saliendo\n");
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free(new_node);
 		exit(EXIT_FAILURE);
 	}
@@ -45,7 +45,7 @@ void push_handler(stack_t **stack, unsigned int line_number)
 
 /**
  *pall_handler - print the stack
- *
+*
  *@stack: head of the list
  *@line_number: number of line with the instruction
  *Return: Nothing
