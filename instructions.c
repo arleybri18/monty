@@ -21,11 +21,11 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	}
 
 	/*put data in node,-- validate how send this value*/
-	new_node->n = n;
+	new_node->n = 1;
 	new_node->next = *stack;
 	new_node->prev = NULL;
 	/*validate if a list is not empty, point tp new node*/
-	if (*stack != NULL)
+	if (*stack != NULL || stack == NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
 }
