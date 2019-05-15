@@ -1,10 +1,11 @@
 #include "monty.h"
 
 /**
- * read_lines - read line by line and analize structure
+ * build_instruction - build the instructions
  *
- * @text: text to read
- * Return: number of characters readed
+ * @head: head of the stack
+ * @line_number: number of the line
+ * Return: Nothing
  */
 void build_instruction(stack_t **head, unsigned int line_number)
 {
@@ -18,8 +19,9 @@ void build_instruction(stack_t **head, unsigned int line_number)
 		execute.f = getinstruction(line);
 		if (execute.f)
 			execute.f(head, line_number);
-		else{
-			printf("NO existe el comando");
+		else
+		{
+			fprintf(stderr, "L%d: unknown instruction\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
