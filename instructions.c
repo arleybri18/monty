@@ -43,11 +43,68 @@ void pall_handler(stack_t **stack, unsigned int line_number)
 	stack_t *aux = NULL;
 
 	aux = *stack;
-
-
 	while (aux)
 	{
 		printf("%d\n", aux->n);
 		aux = aux->next;
+	}
+}
+
+/**
+ *pint_handler - print the data on the top of the stack
+ *
+ *@stack: head of the list
+ *@line_number: number of line with the instruction
+ *Return: Nothing
+ */
+
+void pint_handler(stack_t **stack, unsigned int line_number)
+{
+	if (*stack)
+		printf("%d\n", (*stack)->n);
+	else
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/**
+ *pop_handler - delete a top of the stack
+ *
+ *@stack: head of the list
+ *@line_number: number of line with the instruction
+ *Return: Nothing
+ */
+
+void pop_handler(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+	stack_t *aux_node = *stack;
+	unsigned int counter_idx;
+
+	if (stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	counter_idx = 0;
+	/*validate lenght of the list*/
+	while (aux_node)
+	{
+		counter_idx++;
+		aux_node = aux_node->next;
+	}
+	if (counter_idx == 1)
+	{
+		free(current);
+		*stack = NULL;
+	}
+	else
+	{
+		*stack = current->next;
+		(*stack)->prev = NULL;
+		free(current);
 	}
 }
