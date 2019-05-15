@@ -14,7 +14,6 @@ void build_instruction(stack_t **head, unsigned int line_number)
 
 	/*iterate over array to split the opcode and data*/
 	line = strtok(linevalue, " ");
-	printf("la linea es %s\n", line);
 	if (line != NULL)
 	{
 		/*handle if the line is empty*/
