@@ -58,9 +58,9 @@ char is_number(char *str)
 
 	while (str[iterator])
 	{
-		if(iterator == 0 && str[iterator] == '-')
+		if (iterator == 0 && str[iterator] == '-')
 			;
-		else if(is_digit(str[iterator]) == 0)
+		else if (is_digit(str[iterator]) == 0)
 		{
 			return (0);
 		}

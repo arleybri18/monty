@@ -23,8 +23,8 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	}
 
 	/*put data in node,-- validate how send this value*/
-	line = strtok(linevalue, " \n");
-	line = strtok(NULL, " \n");
+	line = strtok(linevalue, " \t\n");
+	line = strtok(NULL, " \t\n");
 	if (line && is_number(line))
 	{
 		new_node->n = atoi(line);

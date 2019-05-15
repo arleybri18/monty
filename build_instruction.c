@@ -14,7 +14,7 @@ void build_instruction(stack_t **head, unsigned int line_number)
 
 	/*iterate over array to split the opcode and data*/
 	aux = str_concat("", linevalue);
-	line = strtok(aux, " ");
+	line = strtok(aux, " \t");
 	if (line != NULL)
 	{
 		/*handle if the line is empty*/
