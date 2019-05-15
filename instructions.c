@@ -43,11 +43,28 @@ void pall_handler(stack_t **stack, unsigned int line_number)
 	stack_t *aux = NULL;
 
 	aux = *stack;
-
-
 	while (aux)
 	{
 		printf("%d\n", aux->n);
 		aux = aux->next;
+	}
+}
+
+/**
+ *pint_handler - print the data on the top of the stack
+ *
+ *@stack: head of the list
+ *@line_number: number of line with the instruction
+ *Return: Nothing
+ */
+
+void pint_handler(stack_t **stack, unsigned int line_number)
+{
+	if (*stack)
+		printf("%d\n", (*stack)->n);
+	else
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
 	}
 }
