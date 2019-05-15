@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	{
 		if (stat(argv[1], &st) != 0)
 		{
-			write(STDERR_FILENO, "USAGE: monty file\n", 18);
+			fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 			exit(EXIT_FAILURE);
 		}
 		read_file(argv[1]);

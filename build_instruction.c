@@ -26,7 +26,7 @@ void build_instruction(stack_t **head, unsigned int line_number)
 				execute.f(head, line_number);
 			else
 			{
-				fprintf(stderr, "L%d: unknown instruction\n", line_number);
+				fprintf(stderr, "L%d: unknown instruction %s\n", line_number, line);
 				free(aux);
 				exit(EXIT_FAILURE);
 			}

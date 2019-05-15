@@ -19,7 +19,7 @@ ssize_t read_file(const char *filename)
 	/*validate if open file fail */
 	if (fd == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file\n");
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 
@@ -31,5 +31,6 @@ ssize_t read_file(const char *filename)
 		line_number++;
 	}
 	free(linevalue);
+	fclose(fd);
 	return (read_text);
 }
