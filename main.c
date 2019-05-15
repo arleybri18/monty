@@ -1,10 +1,12 @@
 #include "monty.h"
 
-int main(int argc, *char *argv[])
+char *linevalue = NULL;
+
+int main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		/*leer el archvo*/
+		read_file(argv[1]);
 	}
 	return (0);
 }
