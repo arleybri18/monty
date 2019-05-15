@@ -11,7 +11,6 @@ void build_instruction(stack_t **head, unsigned int line_number)
 	char *line = NULL;
 	instruction_t execute;
 
-	printf("%s\n", linevalue);
 	/*iterate over array to split the opcode and data*/
 	line = strtok(linevalue, " ");
 	if (line != NULL)

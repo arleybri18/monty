@@ -40,7 +40,7 @@ typedef struct instruction_s
 } instruction_t;
 void (*getinstruction(char *opcode))(stack_t **, unsigned int);
 void push_handler(stack_t **stack, unsigned int line_number);
-void env_handler(stack_t **stack, unsigned int line_number);
+void pall_handler(stack_t **stack, unsigned int line_number);
 ssize_t read_file(const char *filename);
 void  build_instruction(stack_t **head, unsigned int line_number);
 extern char *linevalue;

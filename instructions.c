@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- *push - add node at the beginning of a list
+ *push_handler - add node at the beginning of a list
  *
- *@head: head of the list
- *@n: data for the node at the list
- *Return: address of the new element top of the list
+ *@stack: head of the list
+ *@line_number: number of the line with the instruction
+ *Return: Nothing
  */
 
 void push_handler(stack_t **stack, unsigned int line_number)
@@ -28,4 +28,26 @@ void push_handler(stack_t **stack, unsigned int line_number)
 	if (*stack != NULL)
 		(*stack)->prev = new_node;
 	*stack = new_node;
+}
+
+/**
+ *pall_handler - print the stack
+ *
+ *@stack: head of the list
+ *@line_number: number of line with the instruction
+ *Return: Nothing
+ */
+
+void pall_handler(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = NULL;
+
+	aux = *stack;
+
+
+	while (aux)
+	{
+		printf("%d\n", aux->n);
+		aux = aux->next;
+	}
 }
