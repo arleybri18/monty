@@ -14,15 +14,21 @@ void build_instruction(stack_t **head, unsigned int line_number)
 
 	/*iterate over array to split the opcode and data*/
 	line = strtok(linevalue, " ");
+	printf("la linea es %s\n", line);
 	if (line != NULL)
 	{
-		execute.f = getinstruction(line);
-		if (execute.f)
-			execute.f(head, line_number);
-		else
+		/*handle if the line is empty*/
+		if (line[0] != '\n')
 		{
-			fprintf(stderr, "L%d: unknown instruction\n", line_number);
-			exit(EXIT_FAILURE);
+			execute.f = getinstruction(line);
+			if (execute.f)
+				execute.f(head, line_number);
+			else
+			{
+				fprintf(stderr, "L%d: unknown instruction\n", line_number);
+				exit(EXIT_FAILURE);
+			}
+			
 		}
 	}
 }
