@@ -95,9 +95,6 @@ void pstr_handler(stack_t **stack, unsigned int line_number)
 	stack_t *aux = *stack;
 	(void)line_number;
 
-	if (aux)
-		printf("\n");
-
 	while (aux)
 	{
 		if (aux->n > 0 && aux->n <= 128)
