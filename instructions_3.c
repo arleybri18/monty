@@ -108,13 +108,17 @@ void pstr_handler(stack_t **stack, unsigned int line_number)
 void rotl_handler(stack_t **stack, unsigned int line_number)
 {
 	stack_t *aux = *stack;
-	int first_n = (*stack)->n;
+	int first_n;
 	(void)line_number;
 
-	while(aux->next)
+	if (*stack)
 	{
-		aux->n = aux->next->n;
-		aux = aux->next;
+		first_n = (*stack)->n;
+		while(aux->next)
+		{
+			aux->n = aux->next->n;
+			aux = aux->next;
+		}
+		aux->n = first_n;
 	}
-	aux->n = first_n;
 }
