@@ -50,6 +50,7 @@ void sub_handler(stack_t **stack, unsigned int line_number);
 void div_handler(stack_t **stack, unsigned int line_number);
 void mul_handler(stack_t **stack, unsigned int line_number);
 void mod_handler(stack_t **stack, unsigned int line_number);
+void comment_handler(stack_t **stack, unsigned int line_number);
 ssize_t read_file(const char *filename);
 void  build_instruction(stack_t **head, unsigned int line_number);
 extern char *linevalue;

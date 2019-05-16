@@ -33,3 +33,18 @@ void mod_handler(stack_t **stack, unsigned int line_number)
 	aux_node->prev = NULL;
 	(*stack) = aux_node;
 }
+
+
+/**
+ *comment_handler - Do anything if a lines is a comment
+ *
+ *@stack: head of the list
+ *@line_number: number of the line with the instruction
+ *Return: Nothing
+ */
+
+void comment_handler(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
