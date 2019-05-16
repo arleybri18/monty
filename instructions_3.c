@@ -98,3 +98,23 @@ void pstr_handler(stack_t **stack, unsigned int line_number)
 	printf("\n");
 }
 
+/**
+ *rotr_handler - rotates the stack to the bottom.
+ *
+ *@stack: head of the list
+ *@line_number: number of the line with the instruction
+ *Return: Nothing
+ */
+void rotl_handler(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+	int first_n = (*stack)->n;
+	(void)line_number;
+
+	while(aux->next)
+	{
+		aux->n = aux->next->n;
+		aux = aux->next;
+	}
+	aux->n = first_n;
+}

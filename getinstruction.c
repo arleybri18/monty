@@ -23,6 +23,7 @@ void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"#", comment_handler},
 		{"pchar", pchar_handler},
 		{"pstr", pstr_handler},
+		{"rotl", rotl_handler},
 		{NULL, NULL}
 	};
 
