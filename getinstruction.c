@@ -18,6 +18,7 @@ void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"add", add_handler},
 		{"sub", sub_handler},
 		{"div", div_handler},
+		{"mul", mul_handler},
 		{NULL, NULL}
 	};
 
