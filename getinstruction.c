@@ -14,6 +14,7 @@ void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"pint", pint_handler},
 		{"pop", pop_handler},
 		{"nop", nop_handler},
+		{"swap", swap_handler},
 		{NULL, NULL}
 	};
 
