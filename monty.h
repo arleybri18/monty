@@ -54,6 +54,7 @@ void comment_handler(stack_t **stack, unsigned int line_number);
 void pchar_handler(stack_t **stack, unsigned int line_number);
 void pstr_handler(stack_t **stack, unsigned int line_number);
 void rotl_handler(stack_t **stack, unsigned int line_number);
+void rotr_handler(stack_t **stack, unsigned int line_number);
 ssize_t read_file(const char *filename);
 void  build_instruction(stack_t **head, unsigned int line_number);
 extern char *linevalue;
