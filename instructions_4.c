@@ -9,6 +9,21 @@
  */
 void rotr_handler(stack_t **stack, unsigned int line_number)
 {
+	(void)line_number;
+
+	reverse_handler(stack, line_number);
+	rotl_handler(stack, line_number);
+	reverse_handler(stack, line_number);
+}
+/**
+ *reverse_handler - rotate all stack.
+ *
+ *@stack: head of the list
+ *@line_number: number of the line with the instruction
+ *Return: Nothing
+ */
+void reverse_handler(stack_t **stack, unsigned int line_number)
+{
 	stack_t *aux_i = *stack, *aux_f = *stack;
 	int  aux_n;
 	(void)line_number;
