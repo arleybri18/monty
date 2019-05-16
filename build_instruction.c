@@ -21,7 +21,10 @@ void build_instruction(stack_t **head, unsigned int line_number)
 		if (line[0] != '\n')
 		{
 			line = strtok(line, "\n");
-			execute.f = getinstruction(line);
+			if (line[0] == '#')
+				execute.f = getinstruction("#");
+			else
+				execute.f = getinstruction(line);
 			if (execute.f)
 				execute.f(head, line_number);
 			else

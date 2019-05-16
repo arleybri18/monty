@@ -20,6 +20,7 @@ void (*getinstruction(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"div", div_handler},
 		{"mul", mul_handler},
 		{"mod", mod_handler},
+		{"#", comment_handler},
 		{NULL, NULL}
 	};
 
