@@ -97,7 +97,7 @@ void pop_handler(stack_t **stack, unsigned int line_number)
 	stack_t *aux_node = *stack;
 	unsigned int counter_idx;
 
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
