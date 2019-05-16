@@ -60,7 +60,16 @@ void comment_handler(stack_t **stack, unsigned int line_number)
 
 void pchar_handler(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL || *stack == NULL)
+	stack_t *aux = *stack;
+	int len = 0;
+
+	while (aux)
+	{
+		len++;
+		aux = aux->next;
+
+	}
+	if (len == 0)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
@@ -99,7 +108,7 @@ void pstr_handler(stack_t **stack, unsigned int line_number)
 }
 
 /**
- *rotr_handler - rotates the stack to the bottom.
+ *rotl_handler - rotates the stack to the bottom.
  *
  *@stack: head of the list
  *@line_number: number of the line with the instruction
@@ -114,7 +123,7 @@ void rotl_handler(stack_t **stack, unsigned int line_number)
 	if (*stack)
 	{
 		first_n = (*stack)->n;
-		while(aux->next)
+		while (aux->next)
 		{
 			aux->n = aux->next->n;
 			aux = aux->next;
