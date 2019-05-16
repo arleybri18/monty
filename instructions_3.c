@@ -48,3 +48,53 @@ void comment_handler(stack_t **stack, unsigned int line_number)
 	(void)stack;
 	(void)line_number;
 }
+
+
+/**
+ *pchar_handler - Print a char ASCII value
+ *
+ *@stack: head of the list
+ *@line_number: number of the line with the instruction
+ *Return: Nothing
+ */
+
+void pchar_handler(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n < 0 || (*stack)->n > 128)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else
+		printf("%c\n", (*stack)->n);
+}
+
+/**
+ *pstr_handler - Print a chars ASCII value of the all list
+ *
+ *@stack: head of the list
+ *@line_number: number of the line with the instruction
+ *Return: Nothing
+ */
+
+void pstr_handler(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+	(void)line_number;
+
+	while (aux)
+	{
+		if (aux->n <= 0 || aux->n > 128)
+			exit(EXIT_SUCCESS);
+		else
+			printf("%c", aux->n);
+		aux = aux->next;
+	}
+	printf("\n");
+}
+
